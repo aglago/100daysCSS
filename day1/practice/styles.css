@@ -1,0 +1,95 @@
+/**
+  NOTES
+  1. Centering a Div :
+    translate(-50%, -50%) after position absolete
+
+    Elements with dimensions
+        - technique of using negative margins equal to half of the element's dimensions is a common and reliable way to horizontally and vertically center an element.
+        - position absolute, top 50%, left 50% margins -half value of dimensions
+    
+  2. Stacking elements (z-index) :
+    z-index is the CSS property that controls the stacking order of overlapping elements on a page. An element with a higher z-index value will appear in front of an element with a lower z-index value. The property is called “z-index” because it sets the order of elements along the z-axis.
+
+  3. Position : relative
+    The positioning of child elements with position: relative; is still relative to their containing block, which is the nearest ancestor with a position value other than static (the default).
+        the number class is relative to the center div
+
+  4. Position : absolute
+    An absolutely positioned element is positioned relative to its closest positioned ancestor, which means it's positioned relative to the nearest ancestor element that has a position property other than the default value of static.
+        .bar is relative to .number, but out of the normal flow of the web page
+ */
+
+
+/* DON'T RELY ON DEFAULT BROWSER WHITE BACKGROUND */
+body {
+    background: #fff;
+}
+
+/* FRAME */
+.frame {
+    /* CENTER THE DIV */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 400px;
+    /* BROWSER SHOULD ACCOUNT FOR ANY BORDER AND PADDING IN THE ELEMENT'S WIDTH AND HEIGHT */
+    box-sizing: border-box;
+    box-shadow: 4px 8px 16px 0 rgb(0, 0, 0, 0.1);
+    background: #43389F;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.number {
+    position: relative;
+    height: 100px;
+    width: 200px;
+
+    .bar {
+        position: absolute;
+        top: 0.15px;
+        left: 0;
+        height: 45px;
+        width: 18px;
+        border-radius: 2px;
+        box-shadow: 0px 4px 13px 0 rgb(0, 0, 0, 0.2);
+        transform: rotate(45deg);
+        background: #fff;
+        z-index: -1;
+    }
+
+    .stand {
+        position: absolute;
+        top: 1px;
+        left: 15px;
+        height: 100px;
+        width: 20px;
+        border-radius: 2px;
+        box-shadow: 0px 4px 13px 0 rgb(0, 0, 0, 0.2);
+        background: #fff;
+    }
+
+    .first_0, .second_0 {
+        position: absolute;
+        left: 30px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 13px 0 rgb(0, 0, 0, 0.2);
+        z-index: -1;
+        background: #fff;
+    }
+
+    .second_0 {
+        left: 115px;
+        z-index: -2;
+    }
+}
+
