@@ -20,6 +20,9 @@
  */
 
 
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
 /* DON'T RELY ON DEFAULT BROWSER WHITE BACKGROUND */
 body {
     background: #fff;
@@ -37,7 +40,9 @@ body {
     /* BROWSER SHOULD ACCOUNT FOR ANY BORDER AND PADDING IN THE ELEMENT'S WIDTH AND HEIGHT */
     box-sizing: border-box;
     box-shadow: 4px 8px 16px 0 rgb(0, 0, 0, 0.1);
-    background: #43389F;
+    background: linear-gradient(to top right, #433CA0, #4DC2C9);
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .center {
@@ -85,6 +90,7 @@ body {
         box-shadow: 0px 4px 13px 0 rgb(0, 0, 0, 0.2);
         z-index: -1;
         background: #fff;
+        background: radial-gradient(circle,transparent 35%, #fff 35%);
     }
 
     .second_0 {
@@ -93,3 +99,20 @@ body {
     }
 }
 
+.days {
+    font-family: 'Courier Prime', monospace;
+    font-size: 90px;
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+}
+
+.ch {
+    color: #fff;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1;
+    margin-top: -20px;
+}
