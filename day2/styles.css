@@ -1,0 +1,143 @@
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 400px;
+    background: #3FAF82;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+
+    .one, .two, .three {
+        width: 100px;
+        height: 9px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 4px 8px 16px 0px rgb(0, 0, 0, 0.2);
+    }
+
+    .one {
+        z-index: 1;
+    }
+
+    .two {
+        z-index: 2;
+    }
+
+    .three {
+        z-index: 3;
+    }
+}
+
+.icon.exit div:nth-child(1) {
+    /* animation: name duration timing-function delay iteration-count direction */
+    animation: div_one_to_middle 0.5s ease-in forwards;
+}
+
+.icon.exit div:nth-child(2) {
+    animation: div_two_dissapear 0.5s ease-in forwards;
+}
+
+.icon.exit div:nth-child(3) {
+    animation: div_three_to_middle 0.5s ease-in forwards;
+}
+
+
+@keyframes
+div_one_to_middle {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(22px);
+    }
+    100% {
+        transform: translateY(22px) rotate(45deg);
+    }
+}
+
+@keyframes
+div_two_dissapear {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes
+div_three_to_middle {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-22px);
+    }
+    100% {
+        transform: translateY(-22px) rotate(135deg);
+    }
+}
+
+.icon.reverse_animation div:nth-child(1){
+    animation: reverse_one 0.5s ease-in forwards;
+}
+
+.icon.reverse_animation div:nth-child(2){
+    animation: reverse_two 0.5s ease-in forwards;
+}
+.icon.reverse_animation div:nth-child(3){
+    animation: reverse_three 0.5s ease-in forwards;
+}
+
+@keyframes reverse_one {
+    0% {
+        transform: translateY(22px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(22px);
+    }
+    100% {
+        transform: translateY(0)  rotate(0);
+    }
+}
+
+@keyframes reverse_two {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes reverse_three {
+    0% {
+        transform: translateY(-22px) rotate(135deg);
+    }
+    50% {
+        transform: translateY(-22px);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
