@@ -158,3 +158,41 @@ The `box-shadow` property, however, is applied to the entire box, including the 
 ```
 
 In this example, the shadow is created using the `::before` pseudo-element, and its position is adjusted to create the desired effect. You may need to fine-tune the values based on your specific layout and styling preferences.
+
+### CSS VARIABLES
+
+Just like the function of any other variable in any programming language, it is a container that keeps a value.
+
+Variables in CSS are most useful for color storages, but they can store anything.
+
+CSS variables can have global scope of local scope.
+Global variables can be accessed anywhere in the stylesheet while local variables are only accessible in the selector in which they were defined.
+
+Global variables are defined in the `:root` selector which matches to the root element in the document.
+
+### Cubic Bezier FUNCTION
+
+The cubic-bezier() function defines a Cubic Bezier curve. It defines the rate of movement of an animation or transition and not the shape the animation draws as it moves. 
+
+A Cubic Bezier curve is defined by four points C.P1x, C.P1y, C.P2x and C.P2y. C.P1x and C.P2x are the start and the end of the curve and, in CSS these points are fixed as the coordinates are ratios. 
+
+P1 is (0, 0) and represents the initial time and the initial state, P4 is (1, 1) and represents the final time and the final state.  
+
+**CSS SYNTAX**
+
+`cubic_bezier(P1x, P1y, P2x, P2y)`
+
+P1x: X-coordinate of the first control point
+P1y: Y-coordinate of the first control point
+P2x: X-coordinate of the second control point
+P2y: Y-coordinate of the second control point
+
+These coordinates are ratios
+
+P1(X): 0.2 (20% of the animation duration)
+P1(Y): 0.7 (70% of the animation height)
+P2(X): 0.3 (30% of the animation duration)
+P2(Y): 1 (100% of the animation height)
+
+P1x and P1y are the control points of the beginning of the curve and
+P2x and P2y are the control points of the end of the curve
